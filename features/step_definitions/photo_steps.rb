@@ -13,3 +13,11 @@ end
 Then(/^I should see "(.*?)"$/) do |text|
 	expect(page).to have_content text
 end
+
+Given(/^there is a photo with a caption containing "(.*?)"$/) do |caption|
+  Photo.create(caption: caption)
+end
+
+When(/^I am on the homepage$/) do
+  visit "/photos"
+  end
