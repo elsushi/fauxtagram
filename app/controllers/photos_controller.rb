@@ -6,11 +6,17 @@ class PhotosController < ApplicationController
 	end
 
 	def new
+		@photo = Photo.new
 	end
 
 
 	def create
-		Photo.create (params[:photo].permit(:caption))
+		@photo = Photo.new (params[:photo].permit(:caption))
+			if @photo.save
+				flash[:notice] = "Cool pic!"
 		redirect_to photos_path
+	else
+		render 'new'
 	end
+ end
 end
