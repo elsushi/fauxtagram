@@ -4,7 +4,6 @@ class PhotosController < ApplicationController
 
 	def index
 		@photos = Photo.all
-
 	end
 
 	def new
@@ -13,7 +12,7 @@ class PhotosController < ApplicationController
 
 
 	def create
-		@photo = Photo.new (params[:photo].permit(:caption))
+		@photo = Photo.new (params[:photo].permit(:caption, :image))
 			if @photo.save
 				flash[:notice] = "Cool pic!"
 		redirect_to photos_path
