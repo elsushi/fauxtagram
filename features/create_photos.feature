@@ -7,6 +7,7 @@ Scenario: Adding a photo with a caption
 	Given I am logged in
   And I am on the new photo form
   When I fill in "Caption" with "My cool caption"
+  And I attach an image
   And I click "Add your photo!"
   Then I should see "My cool caption"
   

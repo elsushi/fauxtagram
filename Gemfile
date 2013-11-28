@@ -42,6 +42,8 @@ group :test, :development do
 	gem 'cucumber-rails', :require => false
 	gem 'rspec-rails'
 	gem 'database_cleaner'
+	gem 'factory_girl_rails'
+	gem 'shoulda-matchers'
 end 
 
 # Use ActiveModel has_secure_password

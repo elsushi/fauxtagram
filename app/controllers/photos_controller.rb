@@ -12,7 +12,8 @@ class PhotosController < ApplicationController
 
 
 	def create
-		@photo = Photo.new (params[:photo].permit(:caption, :image, :tag_names))
+		
+		@photo = current_user.photos.build(params[:photo].permit(:caption, :image, :tag_names))
 			if @photo.save
 				flash[:notice] = "Cool pic!"
 		redirect_to photos_path

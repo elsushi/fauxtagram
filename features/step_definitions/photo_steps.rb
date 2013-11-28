@@ -15,7 +15,8 @@ Then(/^I should see "(.*?)"$/) do |text|
 end
 
 Given(/^there is a photo with a caption containing "(.*?)"$/) do |caption|
-  Photo.create(caption: caption)
+  @user ||= create(:user)
+  Photo.create(caption: caption, image: Rails.root.join('features/support/capy.jpg').open, user: @user)
 end
 
 When(/^I am on the homepage$/) do
