@@ -13,8 +13,12 @@
 <%= form_for @photo, :html => { :multipart => true } do |f| %>
 	<%= f.label :caption %>
 	<%= f.text_field :caption %>
+  
 	<%= f.label :image %>
 	<%= f.file_field :image %>
+
+  <%= f.label :tag_names %>
+  <%= f.text_field :tag_names %>
 
 	<%= f.submit 'Add your photo!' %>
 <% end %>

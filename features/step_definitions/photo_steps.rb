@@ -22,12 +22,21 @@ When(/^I am on the homepage$/) do
   visit "/photos"
   end
 
+
+When(/^I attach an image$/) do
+  attach_file 'Image', Rails.root.join('features/support/capy.jpg')
+end
+
 Then(/^I should see a picture$/) do
-  visit new_photo_path
-    fill_in 'Caption', with: 'Hello'
-    attach_file 'Image', Rails.root.join('features/support/capy.jpg')
-    click_button 'Add your photo!'
+  # visit new_photo_path
+  #   fill_in 'Caption', with: 'Hello'
+  #   attach_file 'Image', Rails.root.join('features/support/capy.jpg')
+  #   click_button 'Add your photo!'
 
     pic = page.find 'img.uploaded-pic'
     expect(pic['alt']).not_to eq 'Missing'
+end
+
+Then(/^I should see the tag$/) do
+  expect(page).to have_content 'My, tag'
 end

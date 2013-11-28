@@ -3,4 +3,7 @@
 <% @photos.each do |photo| %>
 	<%= photo.caption %>
 	<%= image_tag photo.image.url(:thumb), class: 'uploaded-pic' %>
+	<p>Tags:
+		<%= tag_names(photo) %>
+	</p>
 <% end %>
