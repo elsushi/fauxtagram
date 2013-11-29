@@ -40,4 +40,15 @@ end
 
 Then(/^I should see the tag$/) do
   expect(page).to have_content 'My, tag'
+
 end
+
+
+Then(/^I should be see "(.*?)"$/) do
+  expect(page).to have_content "Edit your photo"  
+end
+
+Then(/^I should not see "(.*?)"$/) do |text|
+  expect(page).not_to have_content text
+end
+

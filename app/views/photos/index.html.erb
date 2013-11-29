@@ -6,7 +6,10 @@
 	<caption>Uploaded by <%= photo.user.email if photo.user %></caption>
 	<p>Tags:
 		<%= tag_names(photo) %>
-	</p>
+		<%= link_to 'Edit photo', edit_photo_path(photo) %>
+		<%= link_to 'Destroy', photo_path(photo),
+                    method: :delete, data: { confirm: 'Are you sure?' } %>
+	</p>	
 <% end %>
 
 	<h3>There are currently this many tags: <%= Tag.count %></h3>
