@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 
 gem "paperclip", "~> 3.0"
+gem 'aws-sdk'
+gem 'websocket-rails'
+gem 'thin'
 
 
 group :doc do
