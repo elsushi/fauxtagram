@@ -4,6 +4,7 @@ Fauxtagram2::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :photos
   resources :tags
+  resources :charges
   # You can have the root of your site routed with "root"
    root 'photos#index'
 

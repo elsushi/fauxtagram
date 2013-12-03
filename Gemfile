@@ -29,10 +29,15 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
+gem 'twitter-bootstrap-rails',
+		github: 'seyhunak/twitter-bootstrap-rails',
+		branch: 'bootstrap3'
+
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
 gem 'websocket-rails'
 gem 'thin'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 
 group :doc do

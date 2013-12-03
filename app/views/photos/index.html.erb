@@ -9,6 +9,8 @@
 		<%= link_to 'Edit photo', edit_photo_path(photo) %>
 		<%= link_to 'Destroy', photo_path(photo),
                     method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Buy a print', new_charge_path(photo) %>
+
 	</p>	
 <% end %>
 
