@@ -1,9 +1,11 @@
 <h1>Fauxtagram!</h1>
 <p><%= link_to 'New photo', new_photo_path %></p>
 <% @photos.each do |photo| %>
-	<%= photo.caption %>
+	<div class='col-md-4'>
+	<h3><%= photo.caption %></h3>
 	<%= image_tag photo.image.url(:thumb), class: 'uploaded-pic' %>
 	<caption>Uploaded by <%= photo.user.email if photo.user %></caption>
+	</div>
 	<p>Tags:
 		<%= tag_names(photo) %>
 		<%= link_to 'Edit photo', edit_photo_path(photo) %>
